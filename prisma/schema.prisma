@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AttendanceStatus {
+  present
+  late
+  absent
+  excused
+}
+
+model Student {
+  id         String       @id @default(uuid())
+  name       String
+  number     String       @unique
+  createdAt  DateTime     @default(now())
+  attendance Attendance[]
+}
+
+model Attendance {
+  id        String           @id @default(uuid())
+  date      DateTime
+  status    AttendanceStatus
+  note      String           @default("")
+  studentId String
+  student   Student          @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([date, studentId])
+  @@index([date])
+}
