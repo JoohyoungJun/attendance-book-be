@@ -22,7 +22,8 @@
   "imports": {
     "#generated/*": "./generated/*",
     "#config": "./src/config/config.js",
-    "#db/*": "./src/db/*"
+    "#db/*": "./src/db/*",
+    "#repository": "./src/repository/index.js"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.4.2",
