@@ -23,7 +23,8 @@
     "#generated/*": "./generated/*",
     "#config": "./src/config/config.js",
     "#db/*": "./src/db/*",
-    "#repository": "./src/repository/index.js"
+    "#repository": "./src/repository/index.js",
+    "#utils/*": "./src/utils/*"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.4.2",
